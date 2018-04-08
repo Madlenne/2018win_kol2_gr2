@@ -65,7 +65,7 @@ def add_grade(class_diary, letter, subject):
 
 	while student_name not in class_diary[letter].keys(): # and student_name2 not in class_diary[letter].keys():
 		
-		print("There is no student named {} in the diary! Type correct name".format(student_name))
+		print("There is no student named {} in the diary! Type correct surname and name".format(student_name))
 		student_name = input()
 		if ' ' in student_name:
 			if student_name not in class_diary[letter].keys(): 
@@ -75,12 +75,15 @@ def add_grade(class_diary, letter, subject):
 	print("Type the grade which you want to add: ")
 	grade = input()
 
-	try:
-		grade = int(grade)
-	except Exception:
-		print("Type a number!")
-		grade = input()
-		grade = int(grade)
+	while True:
+			try:
+				grade = int(grade)
+			except ValueError:
+				print ("Please type a number")
+				grade = input()
+				continue
+			else:
+				break
 
 	while grade < 1 or grade > 6 :
 		print("The grading scale is between 1 and 6. Type correct grade")
@@ -138,7 +141,15 @@ if __name__ == "__main__":
 		print("6. Get average score of a class.\n7. Get total absence of a student.")
 		print("8. Change a subject.\n9. Change a class.\n10. Quit.")
 		choice = input()
-		choice = int(choice)
+		while True:
+			try:
+				choice = int(choice)
+			except ValueError:
+				print ("Please type a number")
+				choice = input()
+				continue
+			else:
+				break
 		while choice < 1 or choice > 10:
 			print("Wrong number! Try again")
 			choice = input()
