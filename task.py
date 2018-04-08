@@ -76,14 +76,14 @@ def add_grade(class_diary, letter, subject):
 	grade = input()
 
 	while True:
-			try:
-				grade = int(grade)
-			except ValueError:
-				print ("Please type a number")
-				grade = input()
-				continue
-			else:
-				break
+		try:
+			grade = int(grade)
+		except ValueError:
+			print ("Please type a number")
+			grade = input()
+			continue
+		else:
+			break
 
 	while grade < 1 or grade > 6 :
 		print("The grading scale is between 1 and 6. Type correct grade")
