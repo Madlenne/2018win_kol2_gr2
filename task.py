@@ -235,7 +235,7 @@ if __name__ == "__main__":
 			answer = 'q'
 
 		with open('data.txt', 'w') as outfile:
-					json.dump(class_dict, outfile)
+			json.dump(class_dict, outfile)
 
 
 
